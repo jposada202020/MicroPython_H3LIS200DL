@@ -97,6 +97,7 @@ high_pass_filter_cutoff_values = (HPCF8, HPCF16, HPCF32, HPCF64)
 AlertStatus = namedtuple("AlertStatus", ["high_g", "low_g"])
 
 
+# pylint: disable=too-many-instance-attributes
 class H3LIS200DL:
     """Driver for the H3LIS200DL Sensor connected over I2C.
 
@@ -161,7 +162,7 @@ class H3LIS200DL:
     _high_pass_filter_mode = CBits(2, _CTRL_REG2, 5)
     _high_pass_filter_cutoff = CBits(2, _CTRL_REG2, 0)
 
-    def __init__(self, i2c: I2C, address: int = 0x19) -> None:
+    def __init__(self, i2c, address: int = 0x19) -> None:
         self._i2c = i2c
         self._address = address
 
@@ -224,19 +225,19 @@ class H3LIS200DL:
         """
 
         x = (
-                self._twos_comp(self._acc_data_x, 8)
-                * full_scale[self._memory_full_scale_selection]
-                / 128
+            self._twos_comp(self._acc_data_x, 8)
+            * full_scale[self._memory_full_scale_selection]
+            / 128
         )
         y = (
-                self._twos_comp(self._acc_data_y, 8)
-                * full_scale[self._memory_full_scale_selection]
-                / 128
+            self._twos_comp(self._acc_data_y, 8)
+            * full_scale[self._memory_full_scale_selection]
+            / 128
         )
         z = (
-                self._twos_comp(self._acc_data_z, 8)
-                * full_scale[self._memory_full_scale_selection]
-                / 128
+            self._twos_comp(self._acc_data_z, 8)
+            * full_scale[self._memory_full_scale_selection]
+            / 128
         )
         return x, y, z
 
@@ -346,7 +347,6 @@ class H3LIS200DL:
             "Z_ENABLED",
         )
         return values[self._z_enabled]
-
 
     @z_enabled.setter
     def z_enabled(self, value: int) -> None:
@@ -466,7 +466,6 @@ class H3LIS200DL:
             raise ValueError("value must be a valid setting")
         self._int1_threshold = value
 
-
     @property
     def interrupt1_duration(self):
         """
@@ -486,7 +485,6 @@ class H3LIS200DL:
             raise ValueError("value must be a valid setting")
         self._int1_duration = value
 
-
     @property
     def interrupt1_source_register(self):
         """
@@ -505,7 +503,6 @@ class H3LIS200DL:
             AlertStatus(high_g=highz, low_g=not highz),
         )
 
-
     @property
     def interrupt1_latched(self):
         """
@@ -515,11 +512,9 @@ class H3LIS200DL:
         """
         return self._int1_latched
 
-
     @interrupt1_latched.setter
     def interrupt1_latched(self, value):
         self._int1_latched = value
-
 
     @property
     def interrupt2_configuration(self):
@@ -529,13 +524,11 @@ class H3LIS200DL:
         """
         return self._int2_configuration
 
-
     @interrupt2_configuration.setter
     def interrupt2_configuration(self, value: int):
         if value > 255:
             raise ValueError("value must be a valid setting")
         self._int2_configuration = value
-
 
     @property
     def interrupt2_threshold(self):
@@ -545,13 +538,11 @@ class H3LIS200DL:
         """
         return self._int2_threshold
 
-
     @interrupt2_threshold.setter
     def interrupt2_threshold(self, value: int):
         if value > 128:
             raise ValueError("value must be a valid setting")
         self._int2_threshold = value
-
 
     @property
     def interrupt2_duration(self):
@@ -566,13 +557,11 @@ class H3LIS200DL:
         """
         return self._int2_duration
 
-
     @interrupt2_duration.setter
     def interrupt2_duration(self, value: int):
         if value > 128:
             raise ValueError("value must be a valid setting")
         self._int2_duration = value
-
 
     @property
     def interrupt2_source_register(self):
@@ -592,7 +581,6 @@ class H3LIS200DL:
             AlertStatus(high_g=highz, low_g=not highz),
         )
 
-
     @property
     def interrupt2_latched(self):
         """
@@ -601,7 +589,6 @@ class H3LIS200DL:
         (0: interrupt request not latched; 2: interrupt request latched)
         """
         return self._int2_latched
-
 
     @interrupt2_latched.setter
     def interrupt2_latched(self, value):
