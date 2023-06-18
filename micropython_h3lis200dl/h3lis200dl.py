@@ -102,7 +102,7 @@ class H3LIS200DL:
     """Driver for the H3LIS200DL Sensor connected over I2C.
 
     :param ~machine.I2C i2c: The I2C bus the H3LIS200DL is connected to.
-    :param int address: The I2C device address. Defaults to :const:`0x69`
+    :param int address: The I2C device address. Defaults to :const:`0x19`
 
     :raises RuntimeError: if the sensor is not found
 
@@ -114,7 +114,7 @@ class H3LIS200DL:
     .. code-block:: python
 
         from machine import Pin, I2C
-        import h3lis200dl
+        from micropython_h3lis200dl import h3lis200dl
 
     Once this is done you can define your `machine.I2C` object and define your sensor object
 
