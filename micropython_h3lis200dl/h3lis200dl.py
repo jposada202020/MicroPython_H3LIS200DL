@@ -120,7 +120,7 @@ class H3LIS200DL:
 
     .. code-block:: python
 
-        i2c = I2C(sda=Pin28), scl=Pin(3))
+        i2c = I2C(1, sda=Pin(2), scl=Pin(3))
         h3lis200dl = h3lis200dl.H3LIS200DL(i2c)
 
     Now you have access to the attributes
