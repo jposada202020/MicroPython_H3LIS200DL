@@ -10,7 +10,6 @@ Introduction
     :target: https://micropython-h3lis200dl.readthedocs.io/en/latest/
     :alt: Documentation Status
 
-
 .. image:: https://img.shields.io/pypi/v/micropython-h3lis200dl.svg
     :alt: latest version on PyPI
     :target: https://pypi.python.org/pypi/micropython-h3lis200dl

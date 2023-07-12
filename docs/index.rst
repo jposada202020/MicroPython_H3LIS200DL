@@ -24,4 +24,4 @@ Table of Contents
 .. toctree::
     :caption: Other Links
 
-    Download from GitHub <https://github.com/jposada202020/MciroPython_H3LIS200DL/releases/latest>
+    Download from GitHub <https://github.com/jposada202020/MicroPython_H3LIS200DL/releases/latest>

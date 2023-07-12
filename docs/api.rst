@@ -1,4 +1,4 @@
-H3LIS200DL
+MicroPython H3LIS200DL Library
 =========================================
 
 

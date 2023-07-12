@@ -127,6 +127,8 @@ class H3LIS200DL:
 
     .. code-block:: python
 
+        accx, accy, accz = h3lis200dl.acceleration
+
     """
 
     _device_id = RegisterStruct(_REG_WHOAMI, "B")
