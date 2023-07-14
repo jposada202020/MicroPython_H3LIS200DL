@@ -101,8 +101,8 @@ AlertStatus = namedtuple("AlertStatus", ["high_g", "low_g"])
 class H3LIS200DL:
     """Driver for the H3LIS200DL Sensor connected over I2C.
     The H3LIS200DL is a low-power high-performance 3-axis linear accelerometer
-    
-    The H3LIS200DL has scales of ±100g/±200g and is capable of measuring 
+
+    The H3LIS200DL has scales of ±100g/±200g and is capable of measuring
     accelerations with output data rates from 0.5 Hz to 1 kHz.
 
     :param ~machine.I2C i2c: The I2C bus the H3LIS200DL is connected to.
