@@ -173,7 +173,7 @@ class H3LIS200DL:
         self._address = address
 
         if self._device_id != 0x32:
-            raise RuntimeError("Failed to find H3LIS200DL")
+            raise RuntimeError("Failed to find the H3LIS200DL sensor")
 
         self._operation_mode = NORMAL_MODE
         self._memory_full_scale_selection = self._full_scale_selection

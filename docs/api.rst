@@ -1,4 +1,4 @@
-MicroPython H3LIS200DL Library
+MicroPython H3LIS200DL Driver
 =========================================
 
 

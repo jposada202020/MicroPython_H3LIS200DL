@@ -18,4 +18,5 @@ while True:
     accx, accy, accz = h3lis.acceleration
     print(f"x:{accx:2f}g, y:{accy:2f}g, z:{accz:2f}g")
     print(h3lis.interrupt1_source_register)
+    print()
     time.sleep(1)

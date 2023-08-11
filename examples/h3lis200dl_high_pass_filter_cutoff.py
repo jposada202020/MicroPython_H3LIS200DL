@@ -19,5 +19,6 @@ while True:
         for _ in range(10):
             accx, accy, accz = h3lis.acceleration
             print(f"x:{accx:2f}g, y:{accy:2f}g, z:{accz:2f}g")
+            print()
             time.sleep(0.5)
         h3lis.high_pass_filter_cutoff = high_pass_filter_cutoff
